@@ -10,6 +10,9 @@ import { DisordersPage } from './pages/DisordersPage';
 import { QuestionnairePage } from './pages/QuestionnairePage';
 import { ScenariosPage } from './pages/ScenariosPage';
 import { ProgressPage } from './pages/ProgressPage';
+import { StatusBar } from '@capacitor/status-bar';
+
+StatusBar.setBackgroundColor({ color: '#000000' });
 
 // Protected route component
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -17,10 +20,6 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) =
   
   if (authStatus === 'loading') {
     return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
-  }
-  
-  if (!user) {
-    return <Navigate to="/" />;
   }
   
   return <>{children}</>;
@@ -31,8 +30,7 @@ function AppRoutes() {
 
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
-        <Header />
+      <div className="flex flex-col max-h-screen">
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={user ? <Navigate to="/disorders" /> : <SignupPage />} />
@@ -72,7 +70,6 @@ function AppRoutes() {
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </main>
-        <Footer />
       </div>
     </Router>
   );

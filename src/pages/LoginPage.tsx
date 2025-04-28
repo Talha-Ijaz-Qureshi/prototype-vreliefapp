@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { LoginForm } from '../components/auth/LoginForm';
-import { Brain } from 'lucide-react';
+import vrfavicon from '../assets/vrfavicon.png';
 
 export const LoginPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="flex justify-center">
-          <Brain className="h-12 w-12 text-primary-600" />
+        <img src={vrfavicon} alt="Logo" style={{ width: 100, height: 100 }} />
         </div>
         <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
           Sign in to your account
@@ -18,8 +18,8 @@ export const LoginPage: React.FC = () => {
         </p>
       </div>
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+      <div className="mt-8  mx-5 sm:mx-auto sm:w-full sm:max-w-md">
+        <div className="bg-white border py-8 px-4 shadow sm:rounded-[1.75em] sm:px-10">
           <LoginForm />
           
           <div className="mt-6">

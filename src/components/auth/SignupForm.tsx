@@ -22,7 +22,7 @@ export const SignupForm: React.FC = () => {
     else if (!/\S+@\S+\.\S+/.test(email)) newErrors.email = 'Email is invalid';
     
     if (!password) newErrors.password = 'Password is required';
-    else if (password.length < 6) newErrors.password = 'Password must be at least 6 characters';
+    else if (password.length < 1) newErrors.password = 'Password must be at least 6 characters';
     
     if (password !== confirmPassword) newErrors.confirmPassword = 'Passwords do not match';
     
@@ -45,7 +45,7 @@ export const SignupForm: React.FC = () => {
   };
   
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 animate-fadeIn">
+    <form onSubmit={handleSubmit} className="space-y-6 animate-fadeIn w-full">
       {errors.form && (
         <div className="bg-error-100 text-error-800 p-3 rounded-md">
           {errors.form}
@@ -59,7 +59,7 @@ export const SignupForm: React.FC = () => {
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder="Enter your full name"
-        fullWidth
+        className='w-full'
         error={errors.name}
       />
       
@@ -70,7 +70,8 @@ export const SignupForm: React.FC = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter your email"
-        fullWidth
+        className='w-full'
+
         error={errors.email}
       />
       
@@ -81,7 +82,8 @@ export const SignupForm: React.FC = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Create a password"
-        fullWidth
+        className='w-full'
+
         error={errors.password}
       />
       
@@ -92,7 +94,8 @@ export const SignupForm: React.FC = () => {
         value={confirmPassword}
         onChange={(e) => setConfirmPassword(e.target.value)}
         placeholder="Confirm your password"
-        fullWidth
+        className='w-full'
+
         error={errors.confirmPassword}
       />
       

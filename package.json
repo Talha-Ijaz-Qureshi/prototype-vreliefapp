@@ -14,7 +14,12 @@
   "dependencies": {
     "@capacitor/android": "^5.7.8",
     "@capacitor/core": "^5.7.8",
+    "@capacitor/status-bar": "^5.0.8",
+    "@egjs/react-view360": "^3.0.4",
+    "@egjs/view360": "^4.0.0-beta.7",
+    "aframe": "^1.7.1",
     "framer-motion": "^10.16.4",
+    "internal-ip": "^8.0.0",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

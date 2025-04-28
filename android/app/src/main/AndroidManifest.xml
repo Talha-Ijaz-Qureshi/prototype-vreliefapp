@@ -16,7 +16,12 @@
             android:theme="@style/AppTheme.NoActionBarLaunch"
             android:launchMode="singleTask"
             android:exported="true">
-
+            android:resizeableActivity="true"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:theme="@style/CapacitorTheme"
+            android:windowLayoutInDisplayCutoutMode="shortEdges"
+            
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

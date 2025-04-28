@@ -3,6 +3,7 @@ import { Brain } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '../ui/Button';
 import { useAuth } from '../../contexts/AuthContext';
+import vrfavicon from '../../assets/vrfavicon.png';
 
 export const Header: React.FC = () => {
   const { user, logout } = useAuth();
@@ -13,7 +14,7 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <Link to="/" className="flex items-center">
-            <Brain className="h-8 w-8 text-white" />
+            <img src={vrfavicon} alt="Logo" className="h-10 w-10" />
             <span className="ml-2 text-xl font-bold text-white">VRelief</span>
           </Link>
           
